@@ -14,6 +14,19 @@ fun main(args: Array<String>) {
     * SpringApplication.run(BlogApplication::class.java, *args)
     * */
     runApplication<BlogApplication>(*args) {
-        setBannerMode(Banner.Mode.OFF)
+        /**
+         * Print the Spring banner to System.out.
+         *
+         *
+         * ie.
+         *    .   ____          _            __ _ _
+         *   /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+         *  ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+         *   \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+         *    '  |____| .__|_| |_|_| |_\__, | / / / /
+         *   =========|_|==============|___/=/_/_/_/
+         *  :: Spring Boot ::  (v2.1.0.BUILD-SNAPSHOT)
+         */
+        setBannerMode(Banner.Mode.CONSOLE)
     }
 }
