@@ -74,5 +74,20 @@ dependencies {
     // 2. Kotlin reflection library (mandatory as of Spring Framework 5)
 	compile("org.jetbrains.kotlin:kotlin-reflect")
 	runtime('com.h2database:h2')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    // Some changes to use JUnit5
+	testCompile('org.springframework.boot:spring-boot-starter-test') {
+        exclude module: 'junit'
+    }
+    testImplementation('org.junit.jupiter:junit-jupiter-api')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
+}
+
+// TEST
+// Enable JUnit5 support
+// Handy features, like autowiring of constructor//method parameters
+// which allows use of non-nullable "val" properties and the possibility to
+// use @BeforeAll / @AfterAll on regular non-static methods
+test {
+    useJUnitPlatform()
 }
